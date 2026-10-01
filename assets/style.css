@@ -1,0 +1,15 @@
+:root{--ink:#234E3C;--beak:#D9792B;--paper:#F7F0E3;--line:#e3d9c6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 "Fredoka",system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+header{text-align:center;padding:24px 0 8px}
+header img{width:min(420px,90%);height:auto}
+h1{font-weight:600;font-size:1.8rem;margin:.6em 0 .2em}
+h2{font-weight:600;font-size:1.25rem;margin:1.6em 0 .3em}
+a{color:var(--beak)}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:.6em 1.2em;border-radius:999px;text-decoration:none;font-weight:600;margin:.3em}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:20px 0}
+code,.mono{font-family:ui-monospace,Menlo,monospace;font-size:.85em;word-break:break-all}
+footer{text-align:center;font-size:.85rem;opacity:.8;margin-top:48px}
+footer a{margin:0 .5em}
+.card>:first-child{margin-top:0}

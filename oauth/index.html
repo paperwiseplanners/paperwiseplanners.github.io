@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/style.css">
+<meta name="robots" content="noindex">
+<title>Connected · PaperwisePlanners</title></head>
+<body><main>
+<header><a href="/"><img src="/assets/logo.svg" alt="PaperwisePlanners" style="width:min(300px,70%)"></a></header>
+<h1 id="h">Pinterest connection</h1>
+<div class="card" id="box"><p>Loading…</p></div>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search),box=document.getElementById('box'),h=document.getElementById('h');
+  if(q.get('error')){h.textContent='Pinterest did not connect';box.innerHTML='<p>Pinterest returned: <code></code></p><p>You can close this page and try the link again.</p>';box.querySelector('code').textContent=q.get('error')+' '+(q.get('error_description')||'');return;}
+  if(!q.get('code')){box.innerHTML='<p>This page receives the reply from Pinterest after you approve the PaperwisePlanners Pin Publisher. Nothing to do here right now.</p>';return;}
+  h.textContent='Pinterest approved the connection';
+  box.innerHTML='<p>Last step: copy this page address and paste it back to Claude in the project thread. The code inside it works once and expires in a few minutes.</p><p class="mono" id="u"></p><p><button class="btn" id="c" style="border:0;cursor:pointer;font:inherit">Copy page address</button></p>';
+  document.getElementById('u').textContent=location.href;
+  document.getElementById('c').onclick=function(){navigator.clipboard.writeText(location.href).then(function(){document.getElementById('c').textContent='Copied';});};
+})();
+</script>
+</main></body></html>
